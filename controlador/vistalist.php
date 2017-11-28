@@ -52,7 +52,7 @@ $in= new Conexion;
 									LISTAS <span class="caret"></span>
 							  		 </a>
 							  		<ul class="dropdown-menu">
-							  			<li><a href="listin.php">Opciones</a></li>
+							  			<li><a href="../vista/listin.php">Opciones</a></li>
 							  		</ul> 
 								</li>
 								<li>
