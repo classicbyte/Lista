@@ -105,8 +105,8 @@ if ($_SESSION['categoria']!="Admin")
 						<select  class="form-control" name="categ" required/>
                            	<option value="">Tipo de usuario</option>
                            	<option value="Enlistador">Enlistador</option>
-                           	<option value="Usuario">Usuario</option>
                            	<option value="Ventas">Ventas</option>
+                           	<option value="Usuario">Usuario</option>
                         </select>	
 					</div>
 					<div class="form-group">
