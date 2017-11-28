@@ -139,7 +139,7 @@ if ($_SESSION['categoria']!="Admin")
 									<?php
 											if ($resul=="") 
 											{
-												echo "<div class='alert alert-info' role='alert'><strong><h4>Crea tu primera lista.</h4></strong></div>";
+												echo "<div class='alert alert-info' role='alert'><strong><h4>Antes de crear una lista, ingresa a los enlistadores que participaran en ella.</h4></strong></div>";
 											}
 											else
 											{
