@@ -105,7 +105,7 @@
                                     <h2><span class="typing"></span></h2>
                                     
                                     <div class="margin-top-60">
-                          <a class="button button-style button-style-icon fa fa-long-arrow-right " href="#portfolio">Registrate Gratis</a>
+                          <a class="button button-style button-style-icon fa fa-long-arrow-right " href="#contact">Registrate Gratis</a>
                                   </div>
                                 
                                 </div>
@@ -123,84 +123,65 @@
     <section id="contact" class="contact-us section-space-padding">
        <div class="container">
           <div class="row">
-                <div class="col-sm-12">
-                    <div class="section-title">
-                        <h2>Contactanos</h2>
-                        <br>
-                    </div>
-                </div>
-            </div>
+              <div class="col-sm-12">
+                  <div class="section-title">
+                    <h2>Contactanos</h2>
+                    <br>
+                  </div>
+              </div>
+          </div>
                         
          
           <div class="row">
-            <div class="col-md-6">   
-                 
-                <div class="row">
-                    <form>
-                    
-					  <div class="col-sm-6">
-  						<div class="form-group">
-  						    <input type="text" id="name" class="form-control" placeholder="Nombre...">
-  						</div>
-            </div>
-								
-              <div class="col-sm-6">
-					    <div class="form-group">
-					       <input type="email" id="email" class="form-control" placeholder="Correo...">
-						 </div>
-                        </div>
-                        
-              <div class="col-sm-6">
-  						  <div class="form-group">
-  							   <input type="text" id="website" class="form-control" placeholder="Whatsapp..">
-  						  </div>
-              </div>
-                          
-              <div class="col-sm-6">
-  						  <div class="form-group">
-  							   <input type="text" id="address" class="form-control" placeholder="facebook.com/tufacebook...">
-  						  </div>
-              </div>
-						<!--	
-                         <div class="col-sm-12">
-						  <select id="subject" class="form-group form-control">
-							<option value="" selected disabled>Subject</option>
-							<option>Website Design & Development</option>
-							<option>Wordpress Development</option>
-							<option>Search Engine Optimization</option>
-                            <option>Mobile Website</option>
-							<option>I Want to General Talk</option>
-                            <option>Other</option>
-						   </select>
-                          </div>
-						-->
+            <div class="col-md-6">  
+              <div class="row">
+                <form method='post' action='../controlador/registrouser.php' enctype='application/x-www-form-urlencoded'>      
+        					<div class="col-sm-6">
+            				<div class="form-group">
+            				  <input type="text" id="name" name="nombre" class="form-control" placeholder="Nombre...">
+            			  </div>
+                  </div>
+        								
+                  <div class="col-sm-6">
+          					<div class="form-group">
+          					 <input type="email" id="email" name="correo" class="form-control" placeholder="Correo...">
+          					</div>
+                  </div>
+                                
+                  <div class="col-sm-6">
+            				<div class="form-group">
+            				  <input type="text" id="website" name="whastapp" class="form-control" placeholder="Whatsapp..">
+            				</div>
+                  </div>
+                                  
+                  <div class="col-sm-6">
+            				<div class="form-group">
+            				  <input type="text" id="address" name="facebook" class="form-control" placeholder="facebook.com/tufacebook...">
+            				</div>
+                  </div>
 
-                       <div class="col-sm-12">
-					    <div class="textarea-message form-group">
-					      <textarea id="message" class="textarea-message form-control" placeholder="Tu mensaje" rows="5"></textarea>
-						  </div>
-                         </div>
-                   
-                   
-                    <div class="text-center">      
-		   <button type="submit" class="button button-style button-style-dark button-style-icon fa fa-long-arrow-right text-center">Enviar</button>
-	                  </div>
-                       
-                  </form>
-                   
-				</div>
-               </div>
-            
-            
-            <div class="col-md-6">   
-              <div id="my-address" class="map space-set">
-              <p>Problemas de conexion</p>
+                  <div class="col-sm-12">
+          					<div class="textarea-message form-group">
+          					  <textarea id="message" name="mensaje" class="textarea-message form-control" placeholder="Tu mensaje" rows="5"></textarea>
+          					</div>
+                  </div>
+                           
+                           
+                  <div class="text-center">      
+        		      <button type="submit" class="button button-style button-style-dark button-style-icon fa fa-long-arrow-right text-center">Enviar</button>
+        	        </div>        
+                </form>      
+    				  </div>
             </div>
-           </div>
-           
-        
-        </div>
-       </div>
+              
+              
+            <div class="col-md-6">   
+            <div id="my-address" class="map space-set">
+            <p>Problemas de conexion</p>
+            </div>
+            </div>
+          </div>
+      </div>
        
       <div class="margin-top-80"> 
        <ul class="social-icon">

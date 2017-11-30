@@ -1,3 +1,3 @@
 # Lista
 
-//redactando... 
+//redactando... aun.
