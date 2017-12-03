@@ -37,6 +37,26 @@
 	   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 	   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script language="JavaScript">
+      function maximaLongitud(texto,maxlong)
+      {
+      var tecla, int_value, out_value;
+
+      if (texto.value.length > maxlong)
+      {
+      /*con estas 3 sentencias se consigue que el texto se reduzca
+      al tamaño maximo permitido, sustituyendo lo que se haya
+      introducido, por los primeros caracteres hasta dicho limite*/
+      in_value = texto.value;
+      out_value = in_value.substring(0,maxlong);
+      texto.value = out_value;
+      alert("No puedes exceder los " + maxlong + " caractéres");
+      return false;
+      }
+      return true;
+      }
+    </script>
     
 
  </head>
@@ -138,31 +158,31 @@
                 <form method='post' action='../controlador/registrouser.php' enctype='application/x-www-form-urlencoded'>      
         					<div class="col-sm-6">
             				<div class="form-group">
-            				  <input type="text" id="name" name="nombre" class="form-control" placeholder="Nombre...">
+            				  <input type="text" id="name" name="nombre" class="form-control" placeholder="Nombre..." required>
             			  </div>
                   </div>
         								
                   <div class="col-sm-6">
           					<div class="form-group">
-          					 <input type="email" id="email" name="correo" class="form-control" placeholder="Correo...">
+          					 <input type="email" id="email" name="correo" class="form-control" placeholder="Correo..." required>
           					</div>
                   </div>
                                 
                   <div class="col-sm-6">
             				<div class="form-group">
-            				  <input type="text" id="website" name="whastapp" class="form-control" placeholder="Whatsapp..">
+            				  <input type="text" id="website" name="whatsapp" class="form-control" placeholder="Whatsapp.." required>
             				</div>
                   </div>
                                   
                   <div class="col-sm-6">
             				<div class="form-group">
-            				  <input type="text" id="address" name="facebook" class="form-control" placeholder="facebook.com/tufacebook...">
+            				  <input type="text" id="address" name="facebook" class="form-control" placeholder="facebook.com/tufacebook..." required>
             				</div>
                   </div>
 
                   <div class="col-sm-12">
           					<div class="textarea-message form-group">
-          					  <textarea id="message" name="mensaje" class="textarea-message form-control" placeholder="Tu mensaje" rows="5"></textarea>
+          					  <textarea onkeyup="return maximaLongitud(this,100)" id="message" name="mensaje" class="textarea-message form-control" placeholder="Deja tu mensaje... Maximo 100 caracteres." rows="5"></textarea>
           					</div>
                   </div>
                            
@@ -183,7 +203,8 @@
           </div>
       </div>
        
-      <div class="margin-top-80"> 
+      <div class="margin-top-80">
+        <center><p>¡Visitanos!</p></center>
        <ul class="social-icon">
          <li><a href="#" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a></li>
          <li><a href="#" target="_blank" class="twitter"><i class="fa fa-whatsapp"></i></a></li>
