@@ -822,6 +822,35 @@ include('../controlador/encryp.php');
 				echo "</table>";
 				echo "</div>";
 			}
-		}// end listaVentas	
+		}// end listaVentas
+
+		public function regUserExtern($nombre,$correo,$what,$face,$insta,$mensaje,$fecha)
+		{
+			//$this->email = $correo;
+			//$query="select * from users_extern where email = '".$this->email."' ";
+			$consulta = $this->conexion->query($query);
+			//if (mysqli_num_rows($consulta)==0) 
+			//{
+			$query="insert into users_extern (name, email, whatsapp, facebook, instagram, mensaje, create_at) values ('".$nombre."','".$correo."','".$what."','".$face."','".$insta."','".$mensaje."','".$fecha."')";
+			if ($this->conexion->query($query)) {
+				$resp=1;
+				$resultado=encrypt($resp,"KEY");
+				header("Location:../front/index.php?err=".$resultado."");
+				//echo "Guardado";	
+			}else{
+				$resp=2;
+				$resultado=encrypt($resp,"KEY");
+				header("Location:../front/index.php?err=".$resultado."");
+				//echo "Error al guardar";
+			}
+			//}
+			//else
+			//{
+			//	$resp=3;
+			//	$resultado=encrypt($resp,"KEY");
+			//	header("Location:../front/index.php?err=".$resultado."");
+				//echo "Correo ya registrado";
+			//}
+		}//end regUserExtern	
 	}//end class
 ?>
