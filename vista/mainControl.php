@@ -97,8 +97,8 @@ if ($_SESSION['categoria']!="Admin")
 
 	<div class="container-fluid">
 		
+		<!-- Seccion Ingreso de fecha evento -->
 		<div class="col-xs-12 col-sm-12">
-			<!-- Seccion 2 - Ingreso de venta digital -->
 			<div class="well">
 					<form name='' method='post' action='../controlador/evento.php' enctype='application/x-www-form-urlencoded' class=''>
 						<div class='form-group'>

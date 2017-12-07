@@ -87,12 +87,7 @@ if ($_SESSION['categoria']!="Admin")
 			}elseif ($resultado==3) {
 				echo '<div class="alert alert-danger" role="alert"><center><h4>El <strong>CORREO</strong> ya esta en uso!</center></h4></div>';;
 			}
-	    }else{              	
-	   
-		?>
-
-		<?php 
-			}
+	    }
 		?>	
 	</div>	
 
