@@ -65,27 +65,11 @@ if ($_SESSION['categoria']!="Admin")
 							  		</ul> 
 								</li>
 							</ul>
-							<!--
-							<form action="#" class="navbar-form navbar-right" role="search">
-								<div class="form-group">
-									<select  class="form-control" name="categ" required/>
-			                           	<option value="">Selecciona</option>
-			                           	<option value="Enlistador">Enlistador</option>
-			                           	<option value="Usuario">Usuario</option>
-			                        </select>
-								</div>
-								<div class="form-group">
-									<div class="input-group">
-										<input type="text" class="form-control" placeholder="Buscar..." required>
-										<span class="input-group-btn">
-											<button class="btn btn-success">
-											<span class="glyphicon glyphicon-search"></span>
-											</button>
-										</span>	
-									</div>
-								</div>
-							</form>
-							-->
+							
+							<ul class="nav nav-pills navbar-right" role="tablist">
+							  <li role="presentation"><a href="login.php">Mensajes <span class="badge">00</span></a></li>
+							</ul>
+						
 							 <ul class="nav navbar-nav">
         						<li><a href="../controlador/salir.php?sal=salir">Cerrar sesión</a></li>
         					</ul>

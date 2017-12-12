@@ -82,6 +82,9 @@ $ev = new Conexion;
 								</div>
 							</form>
 							-->
+							<ul class="nav nav-pills navbar-right" role="tablist">
+							  <li role="presentation"><a href="login.php">Mensajes <span class="badge">00</span></a></li>
+							</ul>
 							 <ul class="nav navbar-nav">
         						<li><a href="../controlador/salir.php?sal=salir">Cerrar sesión</a></li>
         					</ul>
