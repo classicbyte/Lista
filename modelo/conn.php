@@ -66,7 +66,7 @@ include('../controlador/encryp.php');
 			}
 		}//End Login/
 
-		public function rpListaActivos()
+		public function rpListaActivos($fechaevento)
 		{
 			$query="select * from lista";			
 			$consulta = $this->conexion->query($query);
@@ -221,7 +221,7 @@ include('../controlador/encryp.php');
 					
 					if ($this->conexion->query($query2)) 
 					{
-
+						echo "ingresados con exito";
 					}
 					else
 					{
@@ -277,8 +277,11 @@ include('../controlador/encryp.php');
 			}	
 		}//end rpActivos
 
-		public function modVentaRp($usuario, $update, $codigolista)
+		public function modVentaRp($usuario, $fechaevento, $codigolista)
 		{
+			echo " /cod user/ ".$resul=decrypt($usuario,"KEY");
+			echo " /fecha evento/ ".$fechaevento;
+			echo " /codigo lista/ ".$codigolista;
 			/*
 			Calcular Tramo  
 				tramo 1: 0 a 15 = $0
@@ -289,22 +292,24 @@ include('../controlador/encryp.php');
 			Extraer cantidad de ventas y sumar 1.
 			Extraer total, este 
 			*/
+
+			
 			$resul=decrypt($usuario,"KEY");
-			$query="select * from ventas where cod_user='".$resul."' ";
+			$query="select * from ventas where cod_user='".$resul."' and fecha_event='".$fechaevento."' ";
 			$consulta = $this->conexion->query($query);
 			if ($row = mysqli_fetch_array($consulta) ) {
-				$cod_venta=$row['cod_venta'];
-				$tramo=$row['tramo'];
-				$can_ventas=$row['can_ventas'];
-				$total=$row['total'];
-				$fecha=$row['fecha_event'];
-				$create=$row['create_at'];
+				echo " /cod venta/ ".$cod_venta=$row['cod_venta'];
+				echo " /tramo/ ".$tramo=$row['tramo'];
+				echo " /can ventas/ ".$can_ventas=$row['can_ventas'];
+				echo " /total/ ".$total=$row['total'];
+				echo " /fecha evento/ ".$fecha=$row['fecha_event'];
+				echo " /fecha creacion/ ".$create=$row['create_at'];
 			}
 			else
 			{
 				echo "error";
 			}
-
+			
 			$can_ventas=$can_ventas+1; 
 			if ($can_ventas < 16) 
 			{
@@ -327,8 +332,8 @@ include('../controlador/encryp.php');
 				$tramo = 550;
 			}
 
-			$total = $tramo * $can_ventas;
-
+			echo " /total/ ".$total = $tramo * $can_ventas;
+			
 			$query2="update ventas set cod_user='".$resul."', cod_lista='".$codigolista."', tramo='".$tramo."', can_ventas='".$can_ventas."', total='".$total."', fecha_event='".$fecha."', create_at='".$create."', update_at='".$update."' where cod_venta='".$cod_venta."'  ";
 			if ($this->conexion->query($query2)) 
 			{
@@ -342,6 +347,7 @@ include('../controlador/encryp.php');
 				$resultado=encrypt($resp,"KEY");
 				header("Location:../vista/ventas.php?err=".$resultado."");
 			}
+			
 		}//end modVentaRp
 
 		public function listaVentas($fechaevento)

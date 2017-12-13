@@ -112,10 +112,11 @@ $resulfe=$ev->fevento();
 			<div class="color6 col-xs-12">
 				<?php
 					$inn = new Conexion;
-					$html = $inn->rpListaActivos();
+					$html = $inn->rpListaActivos($resulfe);
 					if ($html!="") {
 						echo $html;
 					}
+					$inn->Cerrar();
 				?>
 			</div>
 		</aside>

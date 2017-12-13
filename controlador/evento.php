@@ -26,6 +26,7 @@ else
 		if ($fecha_event or $_SESSION['cod_user'] or $create != "") {
 			$in = new Conexion;
 			$in->addList($_SESSION['cod_user'], $fecha_event, $create, $update);
+			$in->Cerrar();
 		}
 	}
 }

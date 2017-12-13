@@ -63,7 +63,7 @@
 							<input class='form-control' id='pss' type='password' placeholder='contraseña...' name='password' required>
 						</div>
 						<div class="btn-gruop">
-							<a href="../front/index.html" class="btn btn-default">Volver</a>
+							<a href="../front/index.php" class="btn btn-default">Volver</a>
 							<button class='btn btn-default'>Ingresar</button>
 						</div>
 					</form>

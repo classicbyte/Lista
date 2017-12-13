@@ -13,6 +13,7 @@ $fecha=datafecha();
 if ($nombre or $correo or $what or $face or $insta) 
 {
 	$in->regUserExtern($nombre,$correo,$what,$face,$insta,$mensaje,$fecha);
+	$in->Cerrar();
 
 }
 else

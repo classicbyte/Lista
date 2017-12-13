@@ -33,6 +33,7 @@ if ($password == $password2)
 	{
 		$in = new Conexion;
 		$in->addUser($categoria,$actividad,$nombre,$apellido,$correo,md5($respass),$whatsapp,$facebook,$instagram,$fecha);
+		$in->Cerrar();
 	}
 }
 else

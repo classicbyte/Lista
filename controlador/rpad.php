@@ -16,7 +16,8 @@ if ($pos === false)
     if (isset($nombre, $apellido, $correo, $whatsapp, $facebook, $instagram, $fecha)) 
 	{
 		$in= new Conexion;
-		$in->addUserExtern($nombre, $apellido, $correo, $whatsapp, $facebook, $instagram, $fecha);		
+		$in->addUserExtern($nombre, $apellido, $correo, $whatsapp, $facebook, $instagram, $fecha);
+		$in->Cerrar();		
 	}
 	else
 	{

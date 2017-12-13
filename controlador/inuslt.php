@@ -8,6 +8,7 @@ function preAdd()
 	$create=datafecha();
 	//echo $_GET['ad'];
 	$in->rpAddVentas($cod,$fecha,$create);
+	$in->Cerrar();
 }
 
 ?>
