@@ -73,6 +73,7 @@ $in= new Conexion;
 			<div class="color6 col-xs-12">
 				<?php 
 					$in->listaVentas($_POST['selectordefecha']);
+					$in->Cerrar();
 				?>
 			</div>
 		</aside>

@@ -221,7 +221,7 @@ include('../controlador/encryp.php');
 					
 					if ($this->conexion->query($query2)) 
 					{
-						echo "ingresados con exito";
+						//echo "ingresados con exito";
 					}
 					else
 					{
