@@ -2,6 +2,7 @@
 include('../modelo/conn.php');
 include('fecha.php');
 include('sesion.php');
+//include('inuslt.php');
 
 $fecha_event = $_POST['fecha_event'];
 if ($fecha_event=="") {
@@ -11,14 +12,15 @@ if ($fecha_event=="") {
 }
 else
 {
+	/*
 	$fechahoy = datafecha();
 	if ($fecha_event < $fechahoy) {
 		$resp=5;
 		$resultado=encrypt($resp,"KEY");
 		header("Location:../vista/mainControl.php?err=".$resultado."");
 	}
-	else
-	{
+	*/
+	
 		$_SESSION['cod_user'];
 		$create=datafecha(). " " .datahora();
 		$update=$create;
@@ -28,6 +30,6 @@ else
 			$in->addList($_SESSION['cod_user'], $fecha_event, $create, $update);
 			$in->Cerrar();
 		}
-	}
+	
 }
 ?>

@@ -1,6 +1,6 @@
 <?php
 //include('../controlador/encryp.php');
-//include('../controlador/fecha.php');
+include('../controlador/inuslt.php');
 include('../controlador/sesion.php');
 include('../modelo/conn.php');
 $ev = new Conexion;
@@ -88,7 +88,7 @@ if ($_SESSION['categoria']!="Admin")
 						<div class='form-group'>
 							<center>
 								<h3>
-									Fecha proximo evento: <a href="mainControl.php"><span class="glyphicon glyphicon-refresh"></span></a>
+									<strong>Fecha proximo evento. </strong><a href="mainControl.php"><span class="glyphicon glyphicon-refresh"></span></a>
 								</h3>
 									<?php
 										if(isset($_GET['err']))
@@ -96,6 +96,7 @@ if ($_SESSION['categoria']!="Admin")
 											$resultado=decrypt($_GET['err'],"KEY");
 											if ($resultado==1) 
 											{
+												rpaventa();
 												echo "<div class='alert alert-success' role='alert'>Lista <strong>creada!</strong></div>";	
 											}
 											elseif ($resultado==2) 
@@ -159,31 +160,9 @@ if ($_SESSION['categoria']!="Admin")
 		<aside>
 			<div class="color6 col-xs-12">
 				<div class="well">
-					<center><h3><strong>RRPP Activos</strong></h3><p>Para ingresar los enlistadores debes crear un evento, luego agregar aquellos enlistadores faltantes en la Opcion Usuario - agregar y por ultimo presionar "agregar enlistadores a evento".</p>
+					<center><h3><strong>RRPP Activos</strong></h3>
 					
-					<?php 
-					if (isset($_GET['bt'])) {
-						if ($_GET['bt']==1) { ?>
-							<div class="form-group">
-								<button type="submit" class="btn btn-success" disabled="">
-								<span class="glyphicon glyphicon-plus"></span> Los rrpp ya fueron registrados en el evento</button>	  
-							</div>
-					<?php
-						}
-					} else{
-					?>
-
-					<div>
-						<form action="../controlador/inuslt.php" class="">
-							<div class="form-group">
-								<button type="submit" class="btn btn-success">
-								<span class="glyphicon glyphicon-plus"></span> Agregar enlistadores a evento</button>	  
-							</div>
-						</form>
-					</div>
-					<?php 
-					}
-					?>
+					
 
 					</center>
 					<?php 
