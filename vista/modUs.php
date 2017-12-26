@@ -70,14 +70,15 @@ $in = new Conexion;
 	</div>
 	<div class="container-fluid">
 		<div class="well">
-				<center><h2><strong>Modificar Usuario </strong><span class="glyphicon glyphicon-user"></span> <span class="glyphicon glyphicon-pencil"></span></h2></center>
+				<center><h2><strong>Modificar Usuario </strong><span class="glyphicon glyphicon-edit"></span></h2></center>
+				<?php 
+					$in->modUser($_GET['us']);
+				?>
 		</div>
 	</div>
 	<div class="container-fluid">
 		<div class="">
-				<?php 
-					$in->modUser($_GET['us']);
-				?>
+				
 		</div>
 	</div>
 	<br>

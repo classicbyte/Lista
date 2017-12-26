@@ -213,6 +213,7 @@ include('../controlador/encryp.php');
 			$query="select * from users";
 			$consulta = $this->conexion->query($query);
 
+			
 			while($row = mysqli_fetch_array($consulta))
 			{
 				if ($row['activo']==1 && $row['category_users']=="Enlistador") 
@@ -221,7 +222,8 @@ include('../controlador/encryp.php');
 					
 					if ($this->conexion->query($query2)) 
 					{
-						//echo "ingresados con exito";
+						header("Location:../vista/mainControl.php?bt=1");
+
 					}
 					else
 					{
@@ -230,8 +232,9 @@ include('../controlador/encryp.php');
 					}
 					
 				}
-			}			
-		}//fin rpVentas
+			}
+					
+		}//fin rpAddVentas
 
 		public function rpActivos()
 		{

@@ -17,7 +17,7 @@
     <meta name="robots" content="index,follow">
     
     
-    <title>.::A poca LUZ::..</title>
+    <title>.::ConLista::..</title>
     
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon/favicon.ico">
@@ -83,7 +83,7 @@
                 
                     <div class="col-sm-3">
                         <div class="logo">
-                            <a href="index-2.html">..::A poca LUZ::..</a>
+                            <a href="index-2.html">..::Con Lista::..</a>
                         </div>
                     </div>
                     

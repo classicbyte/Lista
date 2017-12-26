@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>// Lista //</title>
+	<title>.::ConLista::.</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" >
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -30,29 +30,30 @@
 	<div class="container">
 		<section class="">
 			<div class="col-xs-12">
-				<div class="well">
-					<center><h1><strong>Sistema interno</strong></h1></center>
-				</div>
-				<?php
-                    error_reporting(E_ALL  ^  E_NOTICE  ^  E_WARNING); 
-                    //Mensaje de validacion denegada.
-                    if (isset($_GET['err'])) 
-                    {
-                    	$resultado=decrypt($_GET['err'],"KEY");
-                    	if ($resultado=="errordeusuario") 
-                    	{
-                    		echo '<div class="alert alert-danger" role="alert"><center><h4>Usuario y/o contraseña erroneos</h4></center></div>';
-                    	}
-                    }
-                    if(isset($_GET['tip']))
-                    {
-                    	echo '<div class="alert alert-danger" role="alert"><center><h4>Tu usuario se encuentra inactivo :(</h4></center></div>';
-                    }
-                ?>
+				
+				
 			</div>
 			<div class="col-xs-12 col-sm-12">
 				<div class="well">
+					<center><h1><span class="glyphicon glyphicon-lock"></span><strong> </strong></h1></center>
+						<?php
+		                    error_reporting(E_ALL  ^  E_NOTICE  ^  E_WARNING); 
+		                    //Mensaje de validacion denegada.
+		                    if (isset($_GET['err'])) 
+		                    {
+		                    	$resultado=decrypt($_GET['err'],"KEY");
+		                    	if ($resultado=="errordeusuario") 
+		                    	{
+		                    		echo '<div class="alert alert-danger" role="alert"><center><h4>Usuario y/o contraseña erroneos</h4></center></div>';
+		                    	}
+		                    }
+		                    if(isset($_GET['tip']))
+		                    {
+		                    	echo '<div class="alert alert-danger" role="alert"><center><h4>Tu usuario se encuentra inactivo :(</h4></center></div>';
+		                    }
+		                ?>
 					<center>
+						<br>
 					<form name='login' method='post' action='../controlador/valida.php' enctype='application/x-www-form-urlencoded' class=''>
 						<div class='form-group'>
 							<label class='sr-only' for='correo'>Correo:</label>
