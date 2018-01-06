@@ -110,7 +110,7 @@
 		
         $(window).load(function(){
         $(".typing").typed({
-            strings: ["Full oscuridad", "La unica FIESTA", "100% reggaeton Old School", "A POCA LUZ..."],
+            strings: ["FELIZ navidad", "Y un prospero 2018", "Les desea", "conlista.cl"],
             typeSpeed: 50
           });
          });

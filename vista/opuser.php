@@ -8,7 +8,7 @@ $in = new Conexion;
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>// Lista //</title>
+	<title>.::conLista::.</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" >
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -58,9 +58,6 @@ $in = new Conexion;
 									<a href="mainControl.php">Menu</a>
 								</li>
 							</ul>
-							<ul class="nav nav-pills navbar-right" role="tablist">
-							  <li role="presentation"><a href="login.php">Mensajes <span class="badge">00</span></a></li>
-							</ul>
 							 <ul class="nav navbar-nav">
         						<li><a href="../controlador/salir.php?sal=salir">Cerrar sesión</a></li>
         					</ul>
@@ -104,7 +101,17 @@ $in = new Conexion;
 				<?php 
 					if (isset($_POST['categoria'])) 
 					{
-						$in->opUser($_POST['categoria']);
+						if ($_POST['categoria']=="Usuario")
+						{
+							$categ="user_extern";
+							$in->opUser($categ);
+						}
+						else
+						{
+							$in->opUser($_POST['categoria']);
+							$in->Cerrar();	
+						}
+						
 					}
 				?>
 		</div>

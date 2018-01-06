@@ -112,7 +112,7 @@ $in= new Conexion;
 				<div class="form-group">
 			        <form action="../controlador/vistalist.php" method='post' class="form-inline" role="search">
 						<div class="form-group">
-							<input class='form-control' type='text' placeholder='DD-MM-AAAA' name='selectordefecha' required>
+							<input class='form-control' type='text' placeholder='DD-MM-AA' name='selectordefecha' required>
 						</div>
 						<div class="form-group">
 							<div class="input-group">

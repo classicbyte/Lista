@@ -1,4 +1,5 @@
-<?php 
+<?php
+error_reporting(0); 
 session_start();
 include('../controlador/encryp.php');
 	class Conexion
@@ -56,6 +57,10 @@ include('../controlador/encryp.php');
 					elseif($_SESSION['categoria']=="Enlistador")
 					{
 						header("Location:../vista/rpad.php");
+					}
+					elseif($_SESSION['categoria']=="Ventas")
+					{
+						header("Location:../vista/rpventa.php");
 					}	
 				}	
 			}
@@ -429,59 +434,67 @@ include('../controlador/encryp.php');
 
 		public function opUser($categoria)
 		{
-			$query="select * from users where category_users='".$categoria."' ";
-			$consulta=$this->conexion->query($query);
-
-			if (mysqli_num_rows($consulta)==0){
-				echo "<div class='alert alert-success' role='alert'><center><h4>No se encontraron <strong>resultados!</strong></center></h4></div>";//cambiar por un alert
-			}else{
-				echo "<div class='table-responsive'>";
-				echo "<br>";
-				echo "<table class='table table-bordered table-striped' width='80%' align='center'>";
-					echo "<thead>";
-						echo "<tr class='success'>";	         	  
-							echo "<th>Nombre</th>";
-							echo "<th>Apellido</th>";
-							echo "<th>Correo</th>";
-							echo "<th><center>Modificar / Eliminar</center></th>";
-						echo "</tr>";
-					echo "</thead>";
-					echo "<tbody>"; 
-				while ($row = mysqli_fetch_array($consulta)) {
-						echo "<tr>";							
-							echo '<td>'.$row['name'].'</td>';
-							echo '<td>'. $row['last_name'].'</td>';
-							echo '<td>'.$row['email'].'</td>';
-							$cod=encrypt($row['cod_user'],"KEY");
-							echo '<td>
-									<div class="col-xs-6">
-									<form method="post" action="../vista/modUs.php?us='.$cod.'" enctype="application/x-www-form-urlencoded" class="">
-											<div class="form-group">
-												<center>
-													<button type="submit" class="btn btn-warning">
-													<span class="glyphicon glyphicon-pencil"></span></button>
-												</center>	  
-											</div>	
-										</form>
-									</div>
-									<div class="col-xs-6">
-										<form method="post" action="../vista/delUs.php?us='.$cod.'" enctype="application/x-www-form-urlencoded">
-											<div class="form-group">
-												<center>
-													<button type="submit" class="btn btn-danger">
-													<span class="glyphicon glyphicon-remove"></span></button>
-												</center>	  
-											</div>
-										</form>
-									</div>
-								 </td>';
-						echo "</tr>";
-											
-				}
-					echo "</tbody>"; 
-				echo "</table>";
-				echo "</div>";
+			echo $categoria;
+			
+			if ($categoria=="user_extern") 
+			{
+				$query="select * from users_extern";
 			}
+			else
+			{
+				$query="select * from users where category_users='".$categoria."' ";
+			}
+				$consulta=$this->conexion->query($query);
+				if (mysqli_num_rows($consulta)==0){
+					echo "<div class='alert alert-success' role='alert'><center><h4>No se encontraron <strong>resultados!</strong></center></h4></div>";
+				}else{
+					echo "<div class='table-responsive'>";
+					echo "<br>";
+					echo "<table class='table table-bordered table-striped' width='80%' align='center'>";
+						echo "<thead>";
+							echo "<tr class='success'>";	         	  
+								echo "<th>Nombre</th>";
+								echo "<th>Apellido</th>";
+								echo "<th>Correo</th>";
+								echo "<th><center>Modificar / Eliminar</center></th>";
+							echo "</tr>";
+						echo "</thead>";
+						echo "<tbody>"; 
+					while ($row = mysqli_fetch_array($consulta)) {
+							echo "<tr>";							
+								echo '<td>'.$row['name'].'</td>';
+								echo '<td>'. $row['last_name'].'</td>';
+								echo '<td>'.$row['email'].'</td>';
+								$cod=encrypt($row['cod_user'],"KEY");
+								echo '<td>
+										<div class="col-xs-6">
+										<form method="post" action="../vista/modUs.php?us='.$cod.'" enctype="application/x-www-form-urlencoded" class="">
+												<div class="form-group">
+													<center>
+														<button type="submit" class="btn btn-warning">
+														<span class="glyphicon glyphicon-pencil"></span></button>
+													</center>	  
+												</div>	
+											</form>
+										</div>
+										<div class="col-xs-6">
+											<form method="post" action="../vista/delUs.php?us='.$cod.'" enctype="application/x-www-form-urlencoded">
+												<div class="form-group">
+													<center>
+														<button type="submit" class="btn btn-danger">
+														<span class="glyphicon glyphicon-remove"></span></button>
+													</center>	  
+												</div>
+											</form>
+										</div>
+									 </td>';
+							echo "</tr>";
+												
+					}
+						echo "</tbody>"; 
+					echo "</table>";
+					echo "</div>";
+				}
 		}//end opUser
 
 		public function modUser ($codigo)

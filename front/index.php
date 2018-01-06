@@ -83,7 +83,7 @@
                 
                     <div class="col-sm-3">
                         <div class="logo">
-                            <a href="index-2.html">..::Con Lista::..</a>
+                            <a href="index.php">..::Con Lista::..</a>
                         </div>
                     </div>
                     
