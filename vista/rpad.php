@@ -8,7 +8,7 @@ include('../controlador/encryp.php')
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>// Lista //</title>
+	<title>.::conLista::.</title>
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" >
 	<link rel="stylesheet" type="text/css" href="css/estilos.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
@@ -16,7 +16,6 @@ include('../controlador/encryp.php')
 <body class="">
 	<br>
 	<ul class="nav nav-tabs">
-		<li role="presentation"><a href="#">Incio</a></li>
 		<li role="presentation" class="active"><a href="#">Agregar Amigos</a></li>
 		<li role="presentation"><a href="rplista.php">Listas</a></li>
 		<li role="presentation"><a href="../controlador/salir.php?sal=salir">Cerrar Sesion</a></li>

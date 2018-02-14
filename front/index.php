@@ -121,14 +121,10 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 text-center">
-                                <div class="header-text">
+                                <div class="">
                                     <p></p>
-                                    <h2><span class="typing"></span></h2>
-                                    
-                                    <div class="margin-top-60">
-                          <a class="button button-style button-style-icon fa fa-long-arrow-right " href="#contact">Registrate Gratis</a>
-                                  </div>
-                                
+                                     <h2><span class="typing"></span></h2> <!-- script de texto. -->
+                                   
                                 </div>
                             </div>
                         </div>
@@ -250,7 +246,7 @@
           </div>
                
             <div class="col-md-4 text-center">
-               <p>A poca luz</p>
+               <p>conLista</p>
                </div>
               
              <div class="col-md-4 uipasta-credit text-right">

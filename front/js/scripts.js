@@ -110,7 +110,7 @@
 		
         $(window).load(function(){
         $(".typing").typed({
-            strings: ["FELIZ navidad", "Y un prospero 2018", "Les desea", "conlista.cl"],
+            strings: ["PROMOCIONES UNICAS", "EL MEJOR CARRETE", "conlista.cl"],
             typeSpeed: 50
           });
          });
